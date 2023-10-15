@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="End to end framework tests">
+    <listeners>
+        <listener class-name="listener.TestAllureListener"/>
+    </listeners>
+    <test verbose="2" name="Homepage tests">
+        <classes>
+            <class name="com.sta.tests.web.testcases.home.HomePageTest">
+                <methods>
+                    <include name="verifyHomePage" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
