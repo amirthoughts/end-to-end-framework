@@ -36,7 +36,7 @@ public class HomePageTest extends BasePage {
         HomePage homePage = new HomePage(driver);
         assertion.assertTrue(driver.getCurrentUrl().contains("index"), Constants.URL_MISMATCHED);
         assertion.assertTrue(homePage.isLeftNavOptionsHighlighted("Home"), Constants.ELEMENT_NOT_HIGHLIGHTED);
-        assertion.assertTrue(homePage.getPageTitle().getText().contains("Welcome People"), Constants.PAGE_TITLE_MISMATCHED);
+        assertion.assertTrue(homePage.getPageTitle().getText().contains("Welcomes People"), Constants.PAGE_TITLE_MISMATCHED);
         assertion.assertAll();
     }
 
