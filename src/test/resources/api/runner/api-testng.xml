@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Suite">
+    <test verbose="2" name="Playlist tests">
+        <classes>
+            <class name="api.tests.PlaylistTests">
+                <methods>
+                    <include name="shouldBeAbleToCreateAPlaylist" />
+                    <include name="shouldBeAbleToGetAPlaylist" />
+                    <include name="shouldBeAbleToUpdateAPlaylist" />
+                    <include name="shouldNotBeAbleToCreatePlaylistWithoutName" />
+                    <include name="shouldNotBeAbleToCreatePlaylistWithExpiredToken" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

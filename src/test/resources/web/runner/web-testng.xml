@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Web Suite">
+    <test verbose="2" name="Login tests">
+        <classes>
+            <class name="web.com.servicenow.tests.login.LoginTest">
+                <methods>
+                    <include name="verifyValidLogin" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
