@@ -1,13 +1,7 @@
 package web.pages.base;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.time.Duration;
-import java.util.List;
-import java.util.Properties;
-
-//import org.apache.commons.codec.binary.Base64;
+import com.paulhammant.ngwebdriver.NgWebDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.hc.client5.http.utils.Base64;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -22,12 +16,15 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-
-import com.paulhammant.ngwebdriver.NgWebDriver;
-
 import web.constants.Browser;
 import web.constants.Constants;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+import java.util.Properties;
 
 public class BasePage {
 
@@ -67,6 +64,7 @@ public class BasePage {
 					driver = new ChromeDriver(options);
 					System.out.println("Chrome is running in headless mode. Please wait until the exection is over.");
 				} else if (isHeadless.equalsIgnoreCase("false")) {
+					System.out.println("Going to call ChromeDriver()");
 					driver = new ChromeDriver();
 				} else {
 					System.out.println("Please provide a valid mode of chrome execution.");
