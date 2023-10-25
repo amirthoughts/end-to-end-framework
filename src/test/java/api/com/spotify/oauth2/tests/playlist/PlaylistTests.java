@@ -32,7 +32,6 @@ public class PlaylistTests extends BaseTest {
     @Description("This is the description")
     @Test(description = "should be able to create a playlist")
     public void shouldBeAbleToCreateAPlaylist() {
-
         Playlist requestPlaylist = playlistBuilder(generateName(), generateDescription(), false);
         Response response = PlaylistApi.post(requestPlaylist);
         assertStatusCode(response.statusCode(), StatusCode.CODE_201);
