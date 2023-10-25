@@ -10,7 +10,7 @@ import web.logger.Logs;
 import web.pages.base.BasePage;
 import web.pages.home.HomePage;
 
-public class LoginPage{
+public class LoginPage extends BasePage{
     WebDriver driver;
 
     By username = By.id("user_name");
