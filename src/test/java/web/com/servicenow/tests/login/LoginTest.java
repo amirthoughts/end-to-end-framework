@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import web.constants.Constants;
 import web.pages.base.BasePage;
 import web.pages.loginPage.LoginPage;
@@ -32,10 +31,8 @@ public class LoginTest extends BasePage {
     @Issue("LOGIN-123")
     @TmsLink("TMS-456")
     public void verifyValidLogin(){
-        SoftAssert assertion = new SoftAssert();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(prop.getProperty(Constants.USERNAME), assertion);
-        assertion.assertAll();
+        loginPage.login(prop.getProperty(Constants.USERNAME));
     }
 
     @AfterMethod

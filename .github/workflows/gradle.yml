@@ -10,11 +10,12 @@ jobs:
         with:
           java-version: 17
           distribution: adopt
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-actions@v2
         with:
           arguments: build --scan
       - name: Test Reports
         uses: actions/upload-artifact@v2
         with:
           name: Test results
-          path: build/allure-report/index.html
+          path: build/allure-report
+

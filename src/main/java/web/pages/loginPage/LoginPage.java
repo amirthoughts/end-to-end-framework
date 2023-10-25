@@ -1,13 +1,12 @@
 package web.pages.loginPage;
 
-import web.constants.Constants;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import io.qameta.allure.Step;
-import web.logger.Logs;
 import org.testng.asserts.SoftAssert;
+import web.constants.Constants;
+import web.logger.Logs;
 import web.pages.base.BasePage;
 import web.pages.home.HomePage;
 
@@ -45,17 +44,18 @@ public class LoginPage{
     }
 
     @Step("Login to Dashboard")
-    public HomePage login(String email, SoftAssert assertion){
-        assertion = new SoftAssert();
+    public HomePage login(String email){
+        SoftAssert assertion = new SoftAssert();
         assertion.assertTrue(driver.getTitle().equals("Log in | ServiceNow"), Constants.TITLE_MISMATCHED);
-        assertion.assertEquals(this.getUsernameLabel().getText().equals("User name"), Constants.TEXT_MISMATCHED);
+        assertion.assertTrue(this.getUsernameLabel().getText().equals("User name"), Constants.TEXT_MISMATCHED);
         Logs.logReporter("----------- Entering valid username for login ------------");
         getEmail().sendKeys(email);
-        assertion.assertEquals(this.getPasswordLabel().getText().equals("Password"), Constants.TEXT_MISMATCHED);
+        assertion.assertTrue(this.getPasswordLabel().getText().equals("Password"), Constants.TEXT_MISMATCHED);
         getPassword().sendKeys(BasePage.decodeStr("UGFzc3dvcmRAMDc4Ng=="));
         assertion.assertTrue(this.getLogin().isDisplayed(), Constants.ELEMENT_NOT_DISPLAYED);
         getLogin().click();
         Logs.logReporter("----------- Successfully verified valid login ------------");
+        assertion.assertAll();
         return new HomePage(driver);
     }
 

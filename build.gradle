@@ -38,6 +38,7 @@ test {
     useJUnitPlatform()
     useTestNG() {
         outputDirectory = file("$projectDir/test-ouput")
+        testLogging.showStandardStreams = true
         useDefaultListeners = true
         suites ('src/test/resources/web/runner/web-testng.xml', 'src/test/resources/api/runner/api-testng.xml')
     }
