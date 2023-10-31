@@ -90,7 +90,7 @@ public class LoginPage extends BasePage{
             getPassword().sendKeys(BasePage.decodeStr("UGFzc3dvcmRAMDc4Ng=="));
             assertion.assertTrue(this.getLogin().isDisplayed(), Constants.ELEMENT_NOT_DISPLAYED);
             getLogin().click();
-            assertion.assertTrue(driver.getTitle().equals("ServiceNow"), Constants.TITLE_MISMATCHED);
+            assertion.assertTrue(driver.getTitle().equals("Unified Navigation App | ServiceNow"), Constants.TITLE_MISMATCHED);
             Logs.logReporter("----------- Successfully verified valid login ------------");
         }
     }
